@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="You are cordially invited to Amna's 18th Birthday Celebration on March 21, 2026." />
+    <title>Amna's 18th Birthday — You're Invited</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- ═══════════════ CONFETTI CANVAS ═══════════════ -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- ═══════════════ SPARKLES BACKGROUND ═══════════════ -->
+    <div class="sparkle-bg" id="sparkleBg"></div>
+
+    <!-- ═══════════════ MUSIC TOGGLE ═══════════════ -->
+    <button class="music-btn" id="musicToggle" title="Toggle background music" aria-label="Toggle music">
+        <span class="music-icon" id="musicIcon">♪</span>
+    </button>
+    <audio id="bgMusic" loop>
+        <!-- Placeholder: user can replace src with an audio file -->
+        <source src="" type="audio/mpeg" />
+    </audio>
+
+    <!-- ═══════════════ NAVIGATION ═══════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">✦ Amna's 18th ✦</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#invitation" class="nav-link">Invitation</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#rsvp" class="nav-link">RSVP</a></li>
+        </ul>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════
+       SECTION 1 — HERO
+  ═══════════════════════════════════════════════ -->
+    <section class="hero" id="home">
+        <div class="hero-bg-gradient"></div>
+
+        <div class="hero-content" id="heroContent">
+            <!-- Badge pill -->
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span>18th Birthday Celebration</span>
+            </div>
+
+            <p class="hero-pre">— a special occasion —</p>
+            <h1 class="hero-title">You are<em>cordially invited…</em></h1>
+            <p class="hero-subtitle">Amna's 18th Birthday</p>
+
+            <div class="hero-divider">
+                <span class="divider-leaf">✦</span>
+                <span class="divider-line"></span>
+                <span class="divider-flower">❀</span>
+                <span class="divider-line"></span>
+                <span class="divider-leaf">✦</span>
+            </div>
+
+            <p class="hero-tagline">A day of joy, warmth &amp; memories</p>
+
+            <!-- Info chips -->
+            <div class="hero-chips">
+                <span class="hero-chip"><span class="hero-chip-icon">📅</span>March 21, 2026</span>
+                <span class="hero-chip"><span class="hero-chip-icon">⏰</span>Morning to Evening</span>
+                <span class="hero-chip"><span class="hero-chip-icon">📍</span>Our Home</span>
+            </div>
+
+            <!-- CTA row -->
+            <div class="hero-cta-row">
+                <a href="#invitation" class="btn btn-primary scroll-btn" id="viewInvite">View Invitation <span
+                        class="btn-arrow">→</span></a>
+                <a href="#rsvp" class="btn btn-outline scroll-btn">RSVP Now</a>
+            </div>
+        </div>
+
+        <div class="hero-scroll-hint">
+            <span class="scroll-arrow">↓</span>
+            <span class="scroll-hint-text">Scroll to explore</span>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+       SECTION 2 — INVITATION DETAILS
+  ═══════════════════════════════════════════════ -->
+    <section class="invitation" id="invitation">
+        <div class="section-inner fade-on-scroll">
+            <p class="section-label">The Invitation</p>
+            <h2 class="section-heading">Join Us for Something Magical</h2>
+            <p class="invitation-body">
+                You are cordially invited to celebrate my 18th birthday.<br />
+                Please join me for a day of joy and celebration as I mark this special milestone in my life.<br /><br />
+                Feel free to bring extra clothes if you wish to enjoy a refreshing dip in the ocean.
+            </p>
+
+            <!-- Detail Cards -->
+            <div class="details-grid">
+                <div class="detail-card fade-on-scroll">
+                    <div class="detail-icon">📅</div>
+                    <h3 class="detail-title">Date</h3>
+                    <p class="detail-value">March 21, 2026</p>
+                    <p class="detail-sub">Saturday</p>
+                </div>
+                <div class="detail-card fade-on-scroll">
+                    <div class="detail-icon">⏰</div>
+                    <h3 class="detail-title">Time</h3>
+                    <p class="detail-value">Morning to Evening</p>
+                    <p class="detail-sub">All day affair</p>
+                </div>
+                <div class="detail-card fade-on-scroll">
+                    <div class="detail-icon">📍</div>
+                    <h3 class="detail-title">Venue</h3>
+                    <p class="detail-value">Our Home</p>
+                    <p class="detail-sub">Details on confirmation</p>
+                </div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-wrapper fade-on-scroll">
+                <p class="countdown-label">Counting down to the celebration</p>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-num" id="cd-days">00</span>
+                        <span class="countdown-unit">Days</span>
+                    </div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-item">
+                        <span class="countdown-num" id="cd-hours">00</span>
+                        <span class="countdown-unit">Hours</span>
+                    </div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-item">
+                        <span class="countdown-num" id="cd-mins">00</span>
+                        <span class="countdown-unit">Minutes</span>
+                    </div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-item">
+                        <span class="countdown-num" id="cd-secs">00</span>
+                        <span class="countdown-unit">Seconds</span>
+                    </div>
+                </div>
+                <p id="countdown-done" class="countdown-done hidden">🎉 The celebration is today!</p>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div class="map-placeholder fade-on-scroll">
+                <div class="map-inner">
+                    <span class="map-pin">📍</span>
+                    <p class="map-text">Venue details will be shared upon RSVP confirmation.</p>
+                    <p class="map-sub">We look forward to welcoming you!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       SECTION 3 — GALLERY
+  ═══════════════════════════════════════════════ -->
+    <section class="gallery-section" id="gallery">
+        <div class="section-inner fade-on-scroll">
+            <p class="section-label">Memories</p>
+            <h2 class="section-heading">A Glimpse of Joy</h2>
+            <p class="gallery-intro">A little preview of the magic to come ✨</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-card fade-on-scroll">
+                    <div class="gallery-placeholder g1">
+                        <span class="gallery-emoji">🌸</span>
+                        <p>Spring Celebration</p>
+                    </div>
+                </div>
+                <div class="gallery-card fade-on-scroll">
+                    <div class="gallery-placeholder g2">
+                        <span class="gallery-emoji">🌊</span>
+                        <p>Ocean Views</p>
+                    </div>
+                </div>
+                <div class="gallery-card fade-on-scroll">
+                    <div class="gallery-placeholder g3">
+                        <span class="gallery-emoji">🎂</span>
+                        <p>Cake &amp; Sweets</p>
+                    </div>
+                </div>
+                <div class="gallery-card fade-on-scroll">
+                    <div class="gallery-placeholder g4">
+                        <span class="gallery-emoji">🥂</span>
+                        <p>Celebration Toast</p>
+                    </div>
+                </div>
+                <div class="gallery-card fade-on-scroll">
+                    <div class="gallery-placeholder g5">
+                        <span class="gallery-emoji">✨</span>
+                        <p>Golden Moments</p>
+                    </div>
+                </div>
+                <div class="gallery-card fade-on-scroll">
+                    <div class="gallery-placeholder g6">
+                        <span class="gallery-emoji">💐</span>
+                        <p>Floral Decor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       SECTION 4 — RSVP
+  ═══════════════════════════════════════════════ -->
+    <section class="rsvp-section" id="rsvp">
+        <div class="section-inner fade-on-scroll">
+            <p class="section-label">RSVP</p>
+            <h2 class="section-heading">Will You Join Us?</h2>
+            <p class="rsvp-intro">Kindly confirm your attendance by <strong>March 19, 2026</strong></p>
+
+            <div class="rsvp-card fade-on-scroll">
+                <form id="rsvpForm" class="rsvp-form" novalidate>
+                    <div class="form-group">
+                        <label for="rsvp-name" class="form-label">Your Name <span class="required">*</span></label>
+                        <input type="text" id="rsvp-name" name="name" class="form-input"
+                            placeholder="Enter your full name" autocomplete="name" />
+                        <span class="form-error" id="name-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Will you attend? <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label" for="attend-yes">
+                                <input type="radio" id="attend-yes" name="attend" value="yes" />
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">🎉 Yes, I'll be there!</span>
+                            </label>
+                            <label class="radio-label" for="attend-no">
+                                <input type="radio" id="attend-no" name="attend" value="no" />
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">😢 Sorry, I can't make it</span>
+                            </label>
+                        </div>
+                        <span class="form-error" id="attend-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rsvp-message" class="form-label">Leave a Message <span
+                                class="optional">(optional)</span></label>
+                        <textarea id="rsvp-message" name="message" class="form-input form-textarea"
+                            placeholder="Write a birthday wish or note for Amna…" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full" id="rsvpSubmit">
+                        <span>Send RSVP</span>
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </form>
+
+                <!-- Confirmation message (hidden by default) -->
+                <div class="rsvp-confirm hidden" id="rsvpConfirm">
+                    <div class="confirm-icon">🎊</div>
+                    <h3 class="confirm-title">Thank you for your response!</h3>
+                    <p class="confirm-text" id="confirmText"></p>
+                    <button class="btn btn-outline" id="rsvpReset">Submit Another Response</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">✦ Amna's 18th ✦</div>
+            <p class="footer-deadline">RSVP Deadline: <strong>March 19, 2026</strong></p>
+            <div class="footer-divider">❀</div>
+            <p class="footer-message">Your presence would truly mean so much to me.</p>
+            <p class="footer-sign">Sincerely,</p>
+            <p class="footer-name">Amna</p>
+            <p class="footer-copy">© 2026 — Crafted with love 💕</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
