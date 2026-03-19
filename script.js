@@ -170,6 +170,18 @@ rsvpForm.addEventListener('submit', e => {
 
     const attending = attend.value === 'yes';
 
+    // Save to localStorage
+    const formData = {
+        attend: attend.value,
+        firstName: name,
+        lastName: '',
+        message: message,
+        timestamp: new Date().toISOString()
+    };
+    const existingResponses = JSON.parse(localStorage.getItem('rsvpResponses') || '[]');
+    existingResponses.push(formData);
+    localStorage.setItem('rsvpResponses', JSON.stringify(existingResponses));
+
     // Build confirmation message
     let msg = attending
         ? `We're so excited to see you, <strong>${name}</strong>! 🌸 Your presence will make the day even more special.`
